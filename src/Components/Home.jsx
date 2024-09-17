@@ -8,7 +8,7 @@ export default function Home() {
   }, [])
 
   const getResult =async ()=>{
-    let result = await fetch('http://localhost:5000/health-records')
+    let result = await fetch('https://health-tracker-backend-efm1.onrender.com/health-records')
     result = await result.json()
     setData(result)
   }
