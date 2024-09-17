@@ -11,13 +11,13 @@ export default function AllRecords() {
   }, []);
 
   const getResult = async () => {
-    let result = await fetch("http://localhost:5000/health-records");
+    let result = await fetch("https://health-tracker-backend-efm1.onrender.com/health-records");
     result = await result.json();
     setData(result);
   };
 
   const deleteRecord = async (id) => {
-    let result = await fetch(`http://localhost:5000/health-records/${id}`, {
+    let result = await fetch(`https://health-tracker-backend-efm1.onrender.com/health-records/${id}`, {
       method: "delete",
     });
     result = await result.json();
@@ -30,7 +30,7 @@ export default function AllRecords() {
   const handleSearch =async (e) =>{
     let key = e.target.value;
     if(key){
-      let result = await fetch(`http://localhost:5000/search/${key}`);
+      let result = await fetch(`https://health-tracker-backend-efm1.onrender.com/search/${key}`);
       result = await result.json()
       if(result){
         setData(result)
