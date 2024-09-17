@@ -10,7 +10,7 @@ export default function NewRecord() {
 
     const handleClick = async (e) =>{
         e.preventDefault()
-        let data = await fetch('http://localhost:5000/health-records' , {
+        let data = await fetch('https://health-tracker-backend-efm1.onrender.com/health-records' , {
             method: "post",
             body:JSON.stringify({date , bodyTemperature , bloodPressure , heartRate}),
             headers:{'Content-Type' : 'application/json'}
