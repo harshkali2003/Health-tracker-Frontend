@@ -15,7 +15,7 @@ export default function UpdateRecord() {
     }, [])
 
     const getProductDetail = async ()=>{
-         let result = await fetch(`http://localhost:5000/health-records/${params.id}`)
+         let result = await fetch(`https://health-tracker-backend-efm1.onrender.com/health-records/${params.id}`)
          result = await result.json()
          setDate(result.date)
          setBodyTemperature(result.bodyTemperature)
@@ -26,7 +26,7 @@ export default function UpdateRecord() {
 
     const UpdateProduct = async (e) =>{
       e.preventDefault()
-        let data = await fetch(`http://localhost:5000/health-records/${params.id}` , {
+        let data = await fetch(`https://health-tracker-backend-efm1.onrender.com/health-records/${params.id}` , {
             method: "Put",
             body:JSON.stringify({date , bodyTemperature , bloodPressure , heartRate}),
             headers:{'Content-Type' : 'application/json'}
